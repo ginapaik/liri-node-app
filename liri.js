@@ -43,7 +43,7 @@ switch (liriReturn) {
 //command 1 my-tweets
 //errors are either twitter is not defined or twitter is not a constructor
 function myTweets() {
-    var params = { screen_name: 'nicolejayer' };
+    var params = { screen_name: 'janesmi42376901' };
     client.get('statuses/user_timeline', params, function (error, tweets, response) {
         if (!error) {
             for (var i = 0; i < tweets.length; i++) {
@@ -62,7 +62,7 @@ function myTweets() {
 function spotifyThisSong(trackName) {
     var trackName = process.argv[3];
     if (!trackName) {
-        trackName = "The Sign";
+        trackName = "Party";
     };
     songRequest = trackName;
     spotify.search({
