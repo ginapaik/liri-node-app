@@ -90,7 +90,7 @@ function spotifyThisSong(trackName) {
             };
         });
 };
-//command 3 movie this
+
 // run a request to the OMDB API with the movie specified
 function movieThis() {
 
@@ -122,13 +122,11 @@ function movieThis() {
     });
 };
 
-//command 4 do-what-it-says
-// This block of code creates a file called "random.txt"
-// It also adds the spotify command
+
 function doWhatItSays() {
 
-    fs.writeFile("random.txt", 'spotify-this-song,"The Sign"', function (err) {
-        var song = "spotify-this-song 'The Sign'"
+    fs.writeFile("random.txt", 'spotify-this-song,"I want it that way"', function (err) {
+        var song = "spotify-this-song 'I want it that way'"
         // If the code experiences any errors it will log the error to the console.
         if (err) {
             return console.log(err);
