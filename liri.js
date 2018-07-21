@@ -1,7 +1,5 @@
-//using .env to hide keys
 require("dotenv").config();
 
-//project vars
 var keys = require("./keys.js");
 var fs = require("fs");
 var Spotify = require('node-spotify-api');
@@ -12,8 +10,6 @@ var liriReturn = process.argv[2];
 var twitter = require('twitter');
 var client = new twitter(keys.twitter);
 
-
-//switches for various commands
 switch (liriReturn) {
     case "my-tweets":
         myTweets();
@@ -40,8 +36,7 @@ switch (liriReturn) {
         "Use quotes for multiword titles!");
 };
 
-//command 1 my-tweets
-//errors are either twitter is not defined or twitter is not a constructor
+// Gina's fake twitter account "janemsmith"
 function myTweets() {
     var params = { screen_name: 'janesmi42376901' };
     client.get('statuses/user_timeline', params, function (error, tweets, response) {
@@ -57,8 +52,6 @@ function myTweets() {
     });
 };
 
-//command 2 spotify this song
-// need artist, song name, preview, album
 function spotifyThisSong(trackName) {
     var trackName = process.argv[3];
     if (!trackName) {
@@ -91,10 +84,9 @@ function spotifyThisSong(trackName) {
         });
 };
 
-// run a request to the OMDB API with the movie specified
+
 function movieThis() {
 
-    //using movieName from var list at top
     var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&apikey=trilogy";
 
     request(queryUrl, function (error, response, body) {
